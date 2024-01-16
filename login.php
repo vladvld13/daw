@@ -51,7 +51,8 @@ function increment_europe($DB){
 increment_total($DB);
 // Verific IP ul - tara, oras, 
 $ip = $_SERVER['REMOTE_ADDR'];
-$data = json_decode(file_get_contents("http://ipinfo.io/{$ip}"));   //source: https://stackoverflow.com/questions/28012011/how-to-obtain-location-from-ipinfo-io-in-php
+$token = '3ad9839ec73cb0';
+$data = json_decode(file_get_contents("https://ipinfo.io/" . $ip . "?token=" . $token));   //source: https://stackoverflow.com/questions/28012011/how-to-obtain-location-from-ipinfo-io-in-php
 if($data->country == "RO"){
     increment_romania($DB);
 } 
