@@ -12,7 +12,7 @@ class Signup{
             }
 
             if($key == 'email'){
-                if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
+                if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {               //source: https://www.php.net/manual/en/function.filter-var.php
                     $this->error = $this->error . "Invalid email format"; 
                   }
             }

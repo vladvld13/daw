@@ -2,10 +2,16 @@
 
 class Database{
 
-    private $host = "localhost"; 
-    private $username = "root";
-    private $password = "123";
+    // private $host = "localhost"; 
+    // private $username = "root";
+    // private $password = "123";
+    // private $db = "triptastic_db";
+
+    private $host = "92.205.171.217"; 
+    private $username = "vancuta";
+    private $password = "vlad3456v";
     private $db = "triptastic_db";
+    
 
     function connect(){
 
@@ -66,6 +72,15 @@ class Database{
             
 
         }
+
+    }
+
+    function delete($email){
+        $conn = $this->connect();
+        $query = "delete from clients where email = '$email'";
+        $result=mysqli_query($conn,$query);
+        return true;
+
 
     }
 
