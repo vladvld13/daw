@@ -10,8 +10,11 @@
                 <h1 style = "text-align:center;padding-left:500px;"><b> <?php print_r(ucwords($pagename));  ?> </b></h1>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="search_flight.php">Despre Noi</a>
+                    </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="oferte_speciale.php">Last Minute</a>
+                    <a class="nav-link" href="search_flight.php">Cauta un Zbor</a>
                     </li>
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -29,6 +32,7 @@
                         ?>
 
                     <ul class="dropdown-menu" style="background-color: lightyellow;">
+                        <li><a class="dropdown-item" href="adauga_vacanta.php">Adauga vacanta</a></li>
                         <li><a class="dropdown-item" href="raport.php">Raport pagina</a></li>
                         <li><a class="dropdown-item"href="logout.php">Deconectare</a></li>
                     </ul>
