@@ -53,24 +53,13 @@
     <img src="img/sun.png" alt="Imagine" style="position: absolute; right: 0px; top: 100px; max-height: 300px; max-width: 300px;">
 
     <form method="post">
-        <div class="input_box">
-            <input name="first_name" type="text" placeholder="nume" style="background-color: lightyellow;">
-        </div>
-        <div class="input_box">
-            <input name="second_name" type="text" placeholder="prenume"  style="background-color: lightyellow;">
-        </div>
-        <div class="input_box">
-            <input name="email" type="text" placeholder="email"  style="background-color: lightyellow;">
-        </div>
-        <div class="input_box">
-            <input name="password" type="password" placeholder="parola"  style="background-color: lightyellow;">
-        </div>
-        <div class="input_box">
-            <input name="confirm_password" type="password" placeholder="confirma parola"  style="background-color: lightyellow;">
-        </div>
-        <div class="input_box">
-            <input type="Submit" value="Inregistrare"  style="background-color: lightyellow;" required>
-        </div>
+            <input name="first_name" type="text" class="input_box" placeholder="nume"><br><br>
+            <input name="second_name" type="text" class="input_box" placeholder="prenume" ><br><br>
+            <input name="email" type="text" class="input_box" placeholder="email" ><br><br>
+            <input name="password" type="password" class="input_box" placeholder="parola" ><br><br>
+            <input name="confirm_password" type="password" class="input_box" placeholder="confirma parola" ><br><br><br>
+            <input type="Submit" value="Inregistrare" class="submit_box" required>
+
     </form>
 
     <?php

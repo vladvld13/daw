@@ -12,6 +12,16 @@ function get_code($destination){
     elseif($destination == 'Milano' || $destination == 'Milan'){
         return 'MIL';
     }
+    elseif($destination == 'Dubai'){
+        return 'DXB';
+    }
+    elseif($destination == 'Abu Dhabi'){
+        return 'AUH';
+    }
+    elseif($destination == 'London'){
+        return 'LON';
+    }
+
 }
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -44,20 +54,20 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 <div style = "text-align:center; padding-top:200px;padding-left: 500px">
 <form method="post" style="background-color: lightyellow; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 10px; width: 500px; text-align: center;">
-<h1><b>Search a Flight: </b></h1><br><br>
-    <input name="from" type="text" placeholder="From"  style="background-color: white; text-align:center" required>
-    <br>
-    <input name="to" type="text" placeholder="To"  style="background-color: white;text-align:center" required>
+<h1><b>Cauta un Zbor </b></h1><br><br>
+    <input name="from" class="input_box" type="text" placeholder="From"  style="background-color: white; text-align:center" required>
+    <br><br>
+    <input name="to" class="input_box" type="text" placeholder="To"  style="background-color: white;text-align:center" required>
     <br><br>
   <label for="Departure Date">Departure Date:</label>
   <br>
-  <input type="date" id="departure" name="departure">
+  <input type="date" class="input_box" id="departure" name="departure">
   <br>
   <label for="Return Date">Return Date:</label>
   <br>
-  <input type="date" id="return" name="return">
+  <input type="date" class="input_box" id="return" name="return">
   <br><br>
-  <input type="submit" value="Submit" style="background-color: #4caf50; color: #fff; border: none; padding: 10px 20px; text-transform: uppercase; border-radius: 4px; cursor: pointer; transition: background-color 0.3s ease;">
+  <input type="submit" class="submit_box" value="Submit">
 
 </form>
 

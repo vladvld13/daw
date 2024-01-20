@@ -3,6 +3,7 @@ session_start();
 include('includes/header.php'); ?>
 <?php include('connect.php'); ?>
 <?php include('login_class.php'); ?>
+
 <?php
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {       
@@ -47,12 +48,12 @@ function increment_europe($DB){
     $DB->save($query_eu);
 }
 
-// Numarul de accesari se incrementeaza la fiecare accesare a site-ului
+// Numarul de accesari se incrementeaza la fiecare accesare a paginii de login -> motiv = nu se poate intra in site fara sa se faca login.
 increment_total($DB);
 // Verific IP ul - tara, oras, 
 $ip = $_SERVER['REMOTE_ADDR'];
 $token = '3ad9839ec73cb0';
-$data = json_decode(file_get_contents("https://ipinfo.io/" . $ip . "?token=" . $token));   //source: https://stackoverflow.com/questions/28012011/how-to-obtain-location-from-ipinfo-io-in-php
+$data = json_decode(file_get_contents("http://ipinfo.io/{$ip}"));   //source: https://stackoverflow.com/questions/28012011/how-to-obtain-location-from-ipinfo-io-in-php
 if($data->country == "RO"){
     increment_romania($DB);
 } 
@@ -94,12 +95,13 @@ $country = $data->country;
 if(array_key_exists($country, $eu_countries)){
     increment_europe($DB);
 }
-
-
-
-
-
 ?>
+
+
+
+
+
+
 
 <div class="container">
     <div class="row">
@@ -128,15 +130,9 @@ if(array_key_exists($country, $eu_countries)){
     <h4>Log In</h4>
     <img src="img/sun.png" alt="Imagine" style="position: absolute; right: 0px; top: 100px; max-height: 300px; max-width: 300px;">
     <form method="post">
-        <div class="input_box">
-            <input name="email" type="text" placeholder="email"  style="background-color: lightyellow;" required>
-        </div>
-        <div class="input_box">
-            <input name="password" type="password" placeholder="parola"  style="background-color: lightyellow;" required>
-        </div>
-        <div class="input_box">
-            <input type="Submit" value="Log In"  style="background-color: lightyellow;" required>
-        </div>
+            <input name="email" type="text" placeholder="email"  class="input_box" required><br><br>
+            <input name="password" type="password" placeholder="parola"  class="input_box" required><br><br>
+            <input type="Submit" value="Log In"  class="submit_box" required>
     </form>
     <img src="img/palm.png" alt="Imagine" style="position: absolute; right: 100px; bottom: 150px; max-height: 900px; max-width: 900px;">
     <img src="img/sunbed.png" alt="Imagine" style="position: absolute; left: 0px; bottom: 150px; max-height: 900px; max-width: 900px;">

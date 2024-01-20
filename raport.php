@@ -9,20 +9,6 @@ $answer = $DB->read($query)[0];
 
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="container">
     <div class="row">
             <div class="col-md-12">
